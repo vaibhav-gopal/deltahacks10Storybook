@@ -14,19 +14,15 @@ function FlashcardsComponent() {
 
 function StorybookComponent() {
   return (
-    <div className='card'>
-      <h2>Storybook Component</h2>
-      {/* Add Storybook content here */}
-    </div>
+    
+      <div className='storybook'>storybook</div>
+      
   );
 }
 
 function AdditionalResourcesComponent() {
   return (
-    <div className='card' >
-      <h2>Additional Resources Component</h2>
-      {/* Add Additional Resources content here */}
-    </div>
+      <div className='resources'>Additional Resources Component</div>
   );
 }
 

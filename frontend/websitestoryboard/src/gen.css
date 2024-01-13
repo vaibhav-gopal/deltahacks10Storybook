@@ -12,7 +12,21 @@
 
 }
 .display{
+    overflow: hidden;
     height: 300px;
     margin: 2%  2%;
     background-color: blueviolet;
+}
+.resources{
+    height: 100px;
+    margin: 2%  2%;
+    background-color: rgba(22, 50, 140, 0.53);
+    
+}
+
+.storybook{
+    height: 100px;
+    margin: 2%  2%;
+    background-color: rgba(22, 50, 140, 0.53);
+    
 }
