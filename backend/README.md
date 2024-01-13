@@ -9,3 +9,6 @@
 > `python -m pip install cohere`
 > `python -m pip install ipython google-cloud-speech`
 > `python -m pip install openai`
+> `python -m pip install openai-whisper`
+
+Also requires CLI tool ffmpeg... download using brew, apt or choco
