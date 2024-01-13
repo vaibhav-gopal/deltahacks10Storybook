@@ -7,4 +7,4 @@
 3. Install flask, cohere
 > `conda install flask`
 > `python -m pip install cohere`
-
+> `python -m pip install ipython google-cloud-speech'
