@@ -21,5 +21,23 @@ app.listen(port, () => {
 
 function getFlashcards() {
     const spawn = require("child_process").spawn;
-    const pythonProcess = spawn('python',["path/to/script.py"]);
+    const pythonProcess = spawn('python',["path/to/script.py", arg1, arg2, ...]);
+}
+
+
+function openCSV() {
+    
+    for (let i = 0; i < 5; i++) // temporary for loop conditions
+    {
+        // iterate over each file in images
+
+        // extract data and append it to a loop
+
+        // update counter for each for loop iteration
+
+    // return array and count
+    }
+    
+
+
 }
