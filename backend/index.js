@@ -5,6 +5,7 @@ const port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, '../frontend/websitestoryboard/build')))
 app.use('/static', express.static(path.join(__dirname, '../frontend/websitestoryboard/public')))
+app.use('/images', express.static(path.join(__dirname, 'images')))
 
 app.get('/flashcards', (req, res) => {
     res.send('Hello Flashcards!')
