@@ -1,0 +1,15 @@
+{
+  "name": "dh10backend",
+  "version": "1.0.0",
+  "description": "1. Create conda environment > `conda create -n delta python=3.11` 2. Activate conda environemnt > `conda activate delta` 3. Install cohere, whisper-jax > `python -m pip install cohere` > `python -m pip install git+https://github.com/sanchit-gandhi/whisper-jax.git`",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
