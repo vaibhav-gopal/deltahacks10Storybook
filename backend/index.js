@@ -21,7 +21,7 @@ app.listen(port, () => {
 
 function getFlashcards() {
     const spawn = require("child_process").spawn;
-    const pythonProcess = spawn('python',["path/to/script.py", arg1, arg2, ...]);
+    const pythonProcess = spawn('python',[path.join(__dirname, '../frontend/websitestoryboard/public')]);
 }
 
 
