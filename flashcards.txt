@@ -1,0 +1,21 @@
+Here is a set of flashcards to help you remember the Laplace transform: 
+
+Question: What is the Laplace transform?
+Answer: Integral transforms in applied mathematics
+
+Question: What is the Laplace transform used for?
+Answer: Transformation of linear differential equations and convolutional integrals into algebraic ones, making them easier to solve
+
+Question: What are the main properties of the Laplace transform?
+Answer: The Laplace transform has many properties that are used to solve problems, including the following:
+
+1. Linearity
+2. Shift Theorem
+3. Integration theorem
+4. Dilations
+5. Convolution
+
+Question: What is the equation for the Laplace transform?
+Answer: Laplace transform is given by the formula $\mathscr{L}\{f(t)\} = F(s) = \int_0^\infty e^{-st}f(t)dt$ 
+
+Would you like me to generate more flashcards to assist you in studying for this class?
