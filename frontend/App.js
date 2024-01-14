@@ -28,7 +28,7 @@ const App = () => {
                 <p>A React hook that converts speech from the microphone to text and makes it available to your React
                     components.</p>
 
-                <div className="main-content" onClick={() =>  setTextToCopy(transcript)}>
+                <div className="main-content" onClick={() => setTextToCopy(transcript)}>
                     {transcript}
                 </div>
 

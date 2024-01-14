@@ -1,12 +1,21 @@
 const express = require('express')
+var bodyParser = require('body-parser')
 const path = require('path');
 const fs = require('fs');
 const app = express()
 const port = process.env.PORT || 8080;
 
+var jsonParser = bodyParser.json()
+
 app.use(express.static(path.join(__dirname, '../frontend/websitestoryboard/build')))
 app.use('/static', express.static(path.join(__dirname, '../frontend/websitestoryboard/public')))
 app.use('/data', express.static(path.join(__dirname, './temp')))
+
+app.post('/upload', jsonParser, (req, res) => {
+    fs.writeFileSync(path.join(__dirname, './temp/transcript.txt'), req.body["transcript"]);
+
+    res.sendStatus(200);
+})
 
 app.get('/generate', (req, res) => {
     generate(() => {res.sendStatus(200)}, () => {res.sendStatus(500)});

@@ -27,41 +27,11 @@ function StorybookComponent() {
   );
 }
 
-function AdditionalResourcesComponent() {
-  return (
-      <div className='resources'>Additional Resources Component</div>
-  );
-}
-
-function BoxToggleComponent() {
+function BoxToggleComponent({flashcardContent}) {
   const [selectedComponent, setSelectedComponent] = useState('Storybook');
-  const [flashcardContent, setFlashcardContent] = useState();
-  const [pendingGenerate, setPendingGenerate] = useState(false);
 
   function handleComponentChange(component) {
     setSelectedComponent(component);
-  }
-
-  async function handlegen() {
-    setPendingGenerate(true);
-
-    let response = await fetch('generate');
-    if (response.ok) {
-      console.log("Generated")
-    }else {
-      console.log("FAILED TO GENERATE!")
-    }
-
-    console.log("Attempting to get flashcards")
-    response = await fetch('flashcards');
-    if (response.ok) {
-      console.log("Got Flashcards")
-    }else {
-      console.log("Failed to get flashcards")
-    }
-    setFlashcardContent(await response.json());
-
-    setPendingGenerate(false);
   }
 
   function renderSelectedComponent() {
@@ -70,8 +40,6 @@ function BoxToggleComponent() {
         return <FlashcardsComponent flashcardContent={flashcardContent}/>;
       case 'Storybook':
         return <StorybookComponent />;
-      case 'AdditionalResources':
-        return <AdditionalResourcesComponent />;
       default:
         return null;
     }
@@ -83,10 +51,8 @@ function BoxToggleComponent() {
         {renderSelectedComponent()}
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <button className = "generateButton" onClick={() => handlegen()}>Generate</button>
         <button className = "flashcardButton" onClick={() => handleComponentChange('Flashcards')}>Flashcards</button>
         <button className = "storybookButton" onClick={() => handleComponentChange('Storybook')}>Storybook</button>
-        <button className = "resourcesButton" onClick={() => handleComponentChange('AdditionalResources')}>Additional Resources</button>
       </div>
     </div>
   );
