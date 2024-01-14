@@ -9,7 +9,7 @@ app.use('/static', express.static(path.join(__dirname, '../frontend/websitestory
 app.use('/images', express.static(path.join(__dirname, './temp/images')))
 
 app.get('/generate', (req, res) => {
-    generate(() => {res.send('OK')}, () => {res.send('NOT OK')});
+    generate(() => {res.sendStatus(200)}, () => {res.sendStatus(500)});
 })
 
 app.get('/flashcards', (req, res) => {
