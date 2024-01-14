@@ -61,10 +61,10 @@ function BoxToggleComponent() {
         {renderSelectedComponent()}
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <button onClick={() => handlegen("Generate")}>Generate</button>
-        <button onClick={() => handleComponentChange('Flashcards')}>Flashcards</button>
-        <button onClick={() => handleComponentChange('Storybook')}>Storybook</button>
-        <button onClick={() => handleComponentChange('AdditionalResources')}>Additional Resources</button>
+        <button className = "generateButton" onClick={() => handlegen("Generate")}>Generate</button>
+        <button className = "flashcardButton"onClick={() => handleComponentChange('Flashcards')}>Flashcards</button>
+        <button className = "storybookButton"onClick={() => handleComponentChange('Storybook')}>Storybook</button>
+        <button className = "resourcesButton"onClick={() => handleComponentChange('AdditionalResources')}>Additional Resources</button>
       </div>
     </div>
   );
