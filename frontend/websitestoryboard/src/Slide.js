@@ -19,6 +19,9 @@ const Slide = ({ images }) => {
       </button>
       <div className="slide">
         <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} />
+        <div className='captions'>
+            <p1>captions</p1>
+        </div>
       </div>
       <button onClick={nextSlide} className="slide-button">
         Next

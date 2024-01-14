@@ -1,20 +1,22 @@
 .slide-container {
     position: relative;
     width: 100%;
-    height: 300px;
+    
     max-width: 600px; /* Adjust the maximum width as needed */
     margin: 0 auto;
+    justify-content: center;
     
   }
   
   .slide {
     overflow: hidden;
+    height: 80%;
   }
   
   img {
     width: 100%;
     height: auto;
-    max-height: 300px;
+    max-height: 400px;
     display: block;
     object-fit: contain;
   }
@@ -38,3 +40,9 @@
     right: 10px;
   }
   
+  .captions{
+    height: 200px;
+    background-color: yellow;
+    max-height: 200px;
+    overflow-y: scroll;
+  }
