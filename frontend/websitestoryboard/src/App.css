@@ -93,7 +93,8 @@ p{
 }
 body{
   margin-left: 2%;
-  padding-bottom: 19%;
+  padding-bottom: 40%;
+  height: max-content;
 }
 .header{
   margin-left: 3%;
