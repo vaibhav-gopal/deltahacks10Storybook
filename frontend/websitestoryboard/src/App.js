@@ -61,23 +61,26 @@ function App() {
   }
 
   return (
+    <>
     <div className='wrapper'>
-      <div className='nav'>
-        <div className='logo'>
-          <Logo></Logo>
-          <div className='name'>
-            <h1>Storyboard</h1>
+      <div className='leftheader'>
+        <div className='nav'>
+          <div className='logo'>
+            <Logo></Logo>
+            <div className='name'>
+              <h1>Storyboard</h1>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className='header'>
-        <div className='text'>
-          <h2> - Learn new content easily </h2>
-          <h1> Visual Story and Flashcard generator</h1>
-          <p1>Visual learning has been shown to improve retention and understanding, with students exposed to visual aids alongside textual information performing 29% better on post-learning assessments compared to those receiving only text.</p1>
+        <div className='header'>
+          <div className='text'>
+            <h2> - Learn new content easily </h2>
+            <h1> Visual Story and Flashcard generator</h1>
+            <p1>Visual learning has been shown to improve retention and understanding, with students exposed to visual aids alongside textual information performing 29% better on post-learning assessments compared to those receiving only text.</p1>
+          </div>
+          <div className='recordbtn' onClick={startListening}> <h3>Start Recording Now </h3></div>
         </div>
-        <div className='recordbtn' onClick={startListening}> <h3>Start Recording Now </h3></div>
       </div>
 
       
@@ -94,8 +97,9 @@ function App() {
         <div className='genbtn' onClick={handlegen}><h3>Generate</h3></div>
       </div>
       
-      <BoxToggleComponent flashcardContent={flashcardContent}></BoxToggleComponent>
     </div>
+    <BoxToggleComponent flashcardContent={flashcardContent}></BoxToggleComponent>
+    </>
   );
 
   

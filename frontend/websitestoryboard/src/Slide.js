@@ -23,8 +23,6 @@ const Slide = () => {
       <div className="slide">
         <img src={image} style={{width:"100%",height:"400px", marginTop:"4%"}} alt="GENERATE IMAGE"/>
         <center>
-
-        
         <div className='captions'>
             <p1>{story}</p1>
         </div>

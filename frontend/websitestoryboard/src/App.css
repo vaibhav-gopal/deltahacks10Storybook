@@ -1,130 +1,116 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;0,8..60,800;0,8..60,900;1,8..60,200;1,8..60,300;1,8..60,400;1,8..60,500;1,8..60,600;1,8..60,700;1,8..60,800;1,8..60,900&display=swap');
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+
+
 h1{
   color: var(--Neutral-800, #170F49);
   font-feature-settings: 'clig' off, 'liga' off;
   
-  /* Headings/Typography Size 1 */
   font-family: 'DM Sans', sans-serif;
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
-  line-height: 62px; /* 124% */
+  line-height: 62px;
 }
+
 h2{
   color: #05BBAA;
-font-feature-settings: 'clig' off, 'liga' off;
-/* Other/Subtitle */
-font-family: 'DM Sans', sans-serif;
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: 20px; /* 111.111% */
-letter-spacing: 1.8px;
-text-transform: uppercase;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
 
 }
 h3{
   color: var(--Neutral-100, #FFF);
   text-align: center;
   font-feature-settings: 'clig' off, 'liga' off;
-  
-  /* Text Single/200/Bold */
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 300;
-   /* 111.111% */
-  /* letter-spacing: 2px; */
 }
+
 p1{
   color: var(--Neutral-600, #6F6C90);
-font-feature-settings: 'clig' off, 'liga' off;
-
-/* Paragraph/Default */
-font-family: 'DM Sans', sans-serif;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 30px; /* 166.667% */
-
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; 
 }
+
 p{
   color: var(--Neutral-600, #6F6C90);
   font-feature-settings: 'clig' off, 'liga' off;
   padding-right: 3.4%;
   padding-top: 2%;
-  /* Paragraph/Default */
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
 
 }
-.nav {
-  position: relative;
-  justify-content: right;
- padding-left: 2%;
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
 
-  /* background-color: aqua; */
+.leftheader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 50%;
 }
 
-.name {
+.nav {
   width: min-content;
-  margin-right: 10px; /* Adjust the margin as needed */
+  justify-content: right;
+  padding-left: 2%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+
+.header {
+  width: min-content;
 }
 
 .logo {
   display: flex;
-  align-items: center; /* Align items vertically in the center */
+  align-items: center; 
 }
 
-.btncontainer{
-  
-  display: inline-flex;
-  padding: 5px 30px;
-  flex-direction: column;
-  align-items: flex-start;  
-  border-radius: 100px;
-  background: linear-gradient(92deg, #EB5951 28.11%, #D97974 99.62%); 
-}
-body{
-  margin-left: 2%;
-  padding-bottom: 20%;
-  height: max-content;
-}
-.header{
-  margin-left: 3%;
-  margin-top: 5.3%;
-}
-
-.text{
-  width: 40%;
-  margin-bottom: 3.2%;
+.name, .text {
+  width: 40vw;
 }
 
 .transcript {
-  position: absolute;
+  margin-top: 5rem;
   display: flex;
-  flex-direction: column; /* Align items vertically */
+  flex-direction: column; 
   justify-content: center;
-  align-items: center; /* Center horizontally and vertically */
-  top: 270px;
-  right: 0;
+  align-items: center;
   width: 40vw;
   margin-right: 5%;
   min-height: 500px;
-  background-color: #D9D9D9; /* Set your desired background color */
+  height: fit-content;
+  background-color: #D9D9D999;
   border: 1px solid black;
   border-radius:30px ;
-  padding-bottom: 0%;
 }
 
 .multiline-textbox {
-  width: 80%; /* Adjust width as needed */
-  height: 910px; /* Adjust height as needed */
+  width: 80%;
+  min-height: 500px;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -133,13 +119,33 @@ body{
 }
 
 .recordbtn{
+  margin-top: 2rem;
+  margin-left: 2rem;
+  width: auto;
   display: inline-flex;
-padding: 5px 40px;
-flex-direction: column;
-align-items: flex-start;
-border-radius: 100px;
-background: linear-gradient(92deg, #EB5951 28.11%, #D97974 99.62%);
-margin-bottom: 2%;
-
+  padding: 5px 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 100px;
+  background: linear-gradient(92deg, #EB5951 28.11%, #D97974 99.62%);
 }
 
+.btn-style {
+  display: flex;
+  flex-direction: row;
+}
+
+.genbtn{
+  display: flex;
+  width: 503px;
+  height: 56px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
+  border-radius: 100px;
+  justify-content: center;
+  background: linear-gradient(82deg, #05BBAA 35.24%, #4533D4 166.04%, #05BBAA 247.94%);
+}

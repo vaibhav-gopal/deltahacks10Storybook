@@ -50,7 +50,7 @@ function BoxToggleComponent({flashcardContent}) {
       <div className='display'>
         {renderSelectedComponent()}
       </div>
-      <div style={{ display: 'flex', justifyContent: "space-between", columnGap: "5vw", width: "20%", float: "right" ,marginTop:"4%", marginRight:"6%"}}>
+      <div style={{ display: 'flex', justifyContent: "space-between", columnGap: "5vw", width: "fit-content", margin: "auto"}}>
         <div className={`flashcardButton ${selectedComponent === 'Flashcards' ? 'selected' : ''}`} onClick={() => handleComponentChange('Flashcards')}>
           <div style={{ textAlign: 'center', marginTop: "170%" }}>
             <span>Flashcards</span>
