@@ -8,6 +8,8 @@ co = cohere.Client('lOF6qWQJ0aYLxWrQwQYYHbUiHIrBWpQXwyVghS1c')
 openai.api_key = "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"
 client = OpenAI(api_key="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")
 
+
+
 def generate_story(transcript):
     message = ("Pretend you are a script writer for a kids TV show, you are tasked with creating a short cartoon story that aims to teach kids about complex concepts. Given these notes create a short story under 200 words! " + transcript)
 
@@ -51,9 +53,13 @@ def generate_pannels(story):
     
     return image_url
 
-storyboard = generate_story("The Laplace transform is one of many so-called integral transforms in applied mathematics.")
+f = open('./temp/transcript.txt', 'r')
+transcript = f.read()
+f.close()
+
+storyboard = generate_story(transcript)
 image_url = generate_pannels(storyboard)
-flashcards = generate_flashcards("The Laplace transform is one of many so-called integral transforms in applied mathematics.")
+flashcards = generate_flashcards(transcript)
 
 #Uploading output to a txt file
 f = open('./temp/storyboard.txt','w')
