@@ -1,9 +1,0 @@
-Here are some flashcards to help you remember the Laplace transform:
-
-Question: What is the Laplace transform?
-Answer: One of many integral transforms in applied mathematics. 
-
-Question: What is an integral transform? 
-Answer: A mathematical tool for changing the variable of a integral, typically from a spatial variable to a transform variable 
-
-Would you like me to generate more flashcards to assist you in remembering key concepts for your upcoming class?

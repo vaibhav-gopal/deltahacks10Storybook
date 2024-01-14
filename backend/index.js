@@ -8,55 +8,60 @@ app.use(express.static(path.join(__dirname, '../frontend/websitestoryboard/build
 app.use('/static', express.static(path.join(__dirname, '../frontend/websitestoryboard/public')))
 app.use('/images', express.static(path.join(__dirname, './temp/images')))
 
-app.get('/flashcards', (req, res) => {
-    res.send('Hello Flashcards!')
+app.get('/generate', (req, res) => {
+    generate(() => {res.send('OK')}, () => {res.send('NOT OK')});
 })
 
-app.get('/comics', (req, res) => {
-    res.send('Hello Comics!')
+app.get('/flashcards', (req, res) => {
+    res.json(openText(path.join(__dirname, './temp')));
 })
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
-
-function getFlashcards() {
+function generate(onGood, onBad) {
     const spawn = require("child_process").spawn;
-    const pythonProcess = spawn('python',["path/to/script.py"]);
+    const pythonProcess = spawn('python',["./generate.py"]);
+    let send = false;
+    pythonProcess.stdout.on('data', (data) => {
+        console.log(`${data}`);
+    });
+    pythonProcess.stderr.on('data', (data) => {
+        if (send) return;
+        console.log(`${data}`);
+        onBad();
+        send = true;
+    })
+    pythonProcess.on('exit', () => {
+        if (send) return;
+        onGood();
+    })
 }
 
-
 function openText(folderLocation) {
-    // iterate over each file in images
-    const files = fs.readdirSync(folderLocation);
-    
-    for (let i = 0; i < files.length; i++)
+    // get file location & specifics
+    const fileName = 'flashcards.txt';
+    const filePath = path.join(folderLocation,fileName);
+
+    // read file data
+
+    const data = fs.readFileSync(filePath, 'utf8');
+    const lines = data.split('\n');
+    let response = [];
+    for (let j = 0; j < lines.length - 2; j+=3)
     {
-        // get file location & specifics
-        const fileName = files[i];
-        const filePath = path.join(folderLocation,fileName);
-    
-        // read file data
-    
-        const data = fs.readFileSync(filePath, 'utf8');
-        const lines = data.split('\n');
-        let response = [];
-        for (let j = 0; j < lines.length; j+=2)
-        {
-            // extract data and append it to an array
+        // extract data and append it to an array
 
-            response.push({
-                "Question": lines[j],
-                "Answer": lines[j+1],
-                "id": j
-            });      
-        }
-        // print statement to check
-        console.log(data);
-        
-        // return as a .json
-        return JSON.stringify(response);
+        response.push({
+            "Question": lines[j],
+            "Answer": lines[j+1],
+            "id": (j)/ 3
+        });      
     }
-
+    // print statement to check
+    console.log(data);
+    
+    // return as a .json
+    return response;
 }
