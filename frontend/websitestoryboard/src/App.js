@@ -17,7 +17,7 @@ function App() {
   });
 
   const startListening = () => SpeechRecognition.startListening({ continuous: true, language: 'en-IN' });
-  const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition();
+  let { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition();
   // -------------------------
 
   const [pendingGenerate, setPendingGenerate] = useState(false);
@@ -84,15 +84,12 @@ function App() {
       <div className='transcript'>
         <textarea className="multiline-textbox" value={transcript} onClick={() => setTextToCopy(transcript)} placeholder='Type, transcribe or edit here, click generate once complete to see your results....'>
         </textarea>
-
-
         <div className="btn-style">
             <button onClick={setCopied}>
                 {isCopied ? 'Copied!' : 'Copy to clipboard'}
             </button>
             <button onClick={startListening}>Start Listening</button>
             <button onClick={SpeechRecognition.stopListening}>Stop Listening</button>
-            
         </div>
         <div className='genbtn' onClick={handlegen}><h3>Generate</h3></div>
       </div>
