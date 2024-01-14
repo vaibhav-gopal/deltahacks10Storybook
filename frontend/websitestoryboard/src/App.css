@@ -93,7 +93,8 @@ p{
 }
 body{
   margin-left: 2%;
-  padding-bottom: 19%;
+  padding-bottom: 40%;
+  height: max-content;
 }
 .header{
   margin-left: 3%;
@@ -125,7 +126,7 @@ body{
 
 .multiline-textbox {
   width: 80%; /* Adjust width as needed */
-  height: 400px; /* Adjust height as needed */
+  height: 800px; /* Adjust height as needed */
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;

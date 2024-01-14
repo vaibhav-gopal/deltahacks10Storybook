@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import "./gen.css"
-
+import Slide from './Slide.js';
 import FlipCard from './Flipcard.jsx';
 
 function FlashcardsComponent({flashcardContent}) {
-
   function generateList() {
     if (!flashcardContent) return null;
     let listItems = flashcardContent.map(card => {
@@ -21,8 +20,11 @@ function FlashcardsComponent({flashcardContent}) {
 }
 
 function StorybookComponent() {
+  const [images,setimages] = useState(['./logo192.png','./logo512.png']); 
   return (
-    <div className='storybook'>storybook</div>
+      <div className='storybook'>
+           <Slide images={images} />
+      </div>
   );
 }
 
@@ -82,10 +84,10 @@ function BoxToggleComponent() {
         {renderSelectedComponent()}
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <button onClick={() => handlegen()}>Generate</button>
-        <button onClick={() => handleComponentChange('Flashcards')}>Flashcards</button>
-        <button onClick={() => handleComponentChange('Storybook')}>Storybook</button>
-        <button onClick={() => handleComponentChange('AdditionalResources')}>Additional Resources</button>
+        <button className = "generateButton" onClick={() => handlegen()}>Generate</button>
+        <button className = "flashcardButton" onClick={() => handleComponentChange('Flashcards')}>Flashcards</button>
+        <button className = "storybookButton" onClick={() => handleComponentChange('Storybook')}>Storybook</button>
+        <button className = "resourcesButton" onClick={() => handleComponentChange('AdditionalResources')}>Additional Resources</button>
       </div>
     </div>
   );
