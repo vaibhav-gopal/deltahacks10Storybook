@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Slide.css'; // Import your CSS file for styling
+import "./alt.jpg";
+
 
 const Slide = () => {
   const [image, setimage] = useState('/data/images/panel.png'); 
@@ -19,10 +21,14 @@ const Slide = () => {
   return (
     <div className="slide-container">
       <div className="slide">
-        <img src={image} />
+        <img src={image} style={{width:"100%",height:"400px", marginTop:"4%"}} alt="GENERATE IMAGE"/>
+        <center>
+
+        
         <div className='captions'>
             <p1>{story}</p1>
         </div>
+        </center>
       </div>
     </div>
   );

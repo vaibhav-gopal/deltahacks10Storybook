@@ -73,24 +73,30 @@ function App() {
 
       <div className='header'>
         <div className='text'>
-          <h2> - Lecture summarizer and flashcard generator</h2>
-          <h1> Learn new content easily </h1>
-          <p1>Lorem ipsum dolor sit amet consectetur adipiscing elit dolor posuere vel venenatis eu sit massa volutpat massa rhoncus odio feugiat tellus, elit massa sed</p1>
+          <h2> - Learn new content easily </h2>
+          <h1> Visual Story and Flashcard generator</h1>
+          <p1>Visual learning has been shown to improve retention and understanding, with students exposed to visual aids alongside textual information performing 29% better on post-learning assessments compared to those receiving only text.</p1>
         </div>
+        <div className='recordbtn' onClick={startListening}> <h3>Start Recording Now </h3></div>
       </div>
+
       
       <div className='transcript'>
-        <textarea className="multiline-textbox" value={transcript} onClick={() => setTextToCopy(transcript)}>
+        <textarea className="multiline-textbox" value={transcript} onClick={() => setTextToCopy(transcript)} placeholder='Type, transcribe or edit here, click generate once complete to see your results....'>
         </textarea>
+
+
         <div className="btn-style">
             <button onClick={setCopied}>
                 {isCopied ? 'Copied!' : 'Copy to clipboard'}
             </button>
             <button onClick={startListening}>Start Listening</button>
             <button onClick={SpeechRecognition.stopListening}>Stop Listening</button>
-            <button onClick={handlegen}>Generate</button>
+            
         </div>
+        <div className='genbtn' onClick={handlegen}><h3>Generate</h3></div>
       </div>
+      
       <BoxToggleComponent flashcardContent={flashcardContent}></BoxToggleComponent>
     </div>
   );

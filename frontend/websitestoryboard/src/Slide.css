@@ -1,7 +1,6 @@
 .slide-container {
     position: relative;
     width: 100%;
-    
     max-width: 600px; /* Adjust the maximum width as needed */
     margin: 0 auto;
     justify-content: center;
@@ -42,7 +41,10 @@
   
   .captions{
     height: 200px;
-    background-color: yellow;
+    background-color: rgb(254, 254, 254);
     max-height: 200px;
+    
+    width: 90%;
     overflow-y: scroll;
+    margin-bottom: 5% ;
   }
