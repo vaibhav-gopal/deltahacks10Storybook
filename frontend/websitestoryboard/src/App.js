@@ -17,7 +17,7 @@ function App() {
 
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'transcript.pdf';
+    a.download = 'transcript.txt';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
