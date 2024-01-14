@@ -1,12 +1,12 @@
 import cohere
 import openai
 from openai import OpenAI
-import os
 import requests
+import config
 
-co = cohere.Client('lOF6qWQJ0aYLxWrQwQYYHbUiHIrBWpQXwyVghS1c')
-openai.api_key = "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"
-client = OpenAI(api_key="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")
+co = cohere.Client(config.cohere_api_key)
+openai.api_key = config.openai_api_key
+client = OpenAI(api_key=config.openai_api_key)
 
 
 
