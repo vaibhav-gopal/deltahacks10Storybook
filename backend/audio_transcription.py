@@ -1,12 +1,16 @@
 import cohere
-from google.cloud import speech
 import openai
 from openai import OpenAI
+import os
+from IPython.display import Image
+import requests
+
 co = cohere.Client('lOF6qWQJ0aYLxWrQwQYYHbUiHIrBWpQXwyVghS1c')
 openai.api_key = "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"
+client = OpenAI(api_key="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")
 
 def generate_story(transcript):
-    message = ("Pretend you are a script writer for a kids TV show, you are tasked with creating a short cartoon story that aims to teach kids about complex concepts. Given these notes create a short story! " + transcript)
+    message = ("Pretend you are a script writer for a kids TV show, you are tasked with creating a short cartoon story that aims to teach kids about complex concepts. Given these notes create a short story under 200 words! " + transcript)
 
     response = co.chat(
         message, 
@@ -31,32 +35,36 @@ def generate_flashcards(transcript):
 
 #GPT Image Generation
 def generate_pannels(story):     
-    client = OpenAI()
     response = client.images.generate(
     model="dall-e-3",
-    prompt=("Here is a script for a comic story, generate only images that represent each pannel " + story) ,
+    prompt=("Pretend you are a comic book artist who has been given a story to illustrate. Make sure to organize the images into pannels like a comic book. It is crucial that you focus on illustrating the images and that there is no text inside the pictures. Here is the story make sure that the pannels follow closely to the story: " + story) ,
     size="1024x1024",
     quality="standard",
     n=1,
     )
 
     image_url = response.data[0].url
+    # Fetch and save the image
+    image_response = requests.get(image_url)
+    if image_response.status_code == 200:
+        with open('./temp/images/panel.png', 'wb') as file:
+            file.write(image_response.content)
+    
     return image_url
 
 storyboard = generate_story("The Laplace transform is one of many so-called integral transforms in applied mathematics.")
-generate_pannels(storyboard)
+image_url = generate_pannels(storyboard)
+print(generate_pannels(storyboard))
 
-""""
-storyboard = generate_story("The Laplace transform is one of many so-called integral transforms in applied mathematics.")
 flashcards = generate_flashcards("The Laplace transform is one of many so-called integral transforms in applied mathematics.")
 #Uploading output to a txt file
-f = open('storyboard.txt','w')
+f = open('./temp/storyboard.txt','w')
 f.write(storyboard)
 f.close()
 
-s = open('flashcards.txt','w')
+s = open('./temp/flashcards.txt','w')
 s.write(flashcards)
 s.close()
-"""
+
 
 
