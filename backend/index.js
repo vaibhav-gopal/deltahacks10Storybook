@@ -16,6 +16,10 @@ app.get('/flashcards', (req, res) => {
     res.json(openText(path.join(__dirname, './temp')));
 })
 
+app.get('/transcript', (req, res) => {
+    res.json(openTranscript(path.join(__dirname, './temp')));
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
@@ -64,4 +68,21 @@ function openText(folderLocation) {
     
     // return as a .json
     return response;
+}
+
+function openTranscript(folderLocation) {
+    // get file location & specifics
+    const fileName = 'storyboard.txt';
+    const filePath = path.join(folderLocation,fileName);
+
+    // read file data
+
+    const data = fs.readFileSync(filePath, 'utf8');
+    const lines = data.split('\n');
+
+    // print statement to check
+    console.log(data);
+    
+    // return as a .json
+    return lines;
 }
