@@ -68,7 +68,7 @@ function App() {
           <div className='logo'>
             <Logo></Logo>
             <div className='name'>
-              <h1>Storyboard</h1>
+              <h1>VisuAl</h1>
             </div>
           </div>
         </div>
@@ -95,6 +95,7 @@ function App() {
             <button onClick={SpeechRecognition.stopListening}>Stop Listening</button>
         </div>
         <div className='genbtn' onClick={handlegen}><h3>Generate</h3></div>
+        <h3 class='generatefeedback'>{(pendingGenerate) ? 'Generating...' : 'Generating DONE!'}</h3>
       </div>
       
     </div>

@@ -149,3 +149,9 @@ p{
   justify-content: center;
   background: linear-gradient(82deg, #05BBAA 35.24%, #4533D4 166.04%, #05BBAA 247.94%);
 }
+
+.generatefeedback {
+  color: black;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}

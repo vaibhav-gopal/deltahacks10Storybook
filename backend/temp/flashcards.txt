@@ -1,13 +1,7 @@
-Question: What is an important interpretation of derivatives of functions of one variable?
-Answer: The derivative of a function of one variable represents the rate of change of the function as one variable changes.
+Question: What is Gauss's law also known as?
+Answer: Gas flux theorem or simply Gauss's theorem
 
-Question: What is an issue with interpreting derivatives of functions of more than one variable in the same way?
-Answer: There are multiple variables, so there are many ways the variables could change that would affect the rate of change of the function as a whole. 
+Question: What is Gauss's law? 
+Answer: Gauss's law relates to the distribution of electric charge and the resulting electric field and is one of Maxwell's equations. 
 
-Question: What may happen if we want only one of the variables to change while taking the derivative of a function of more than one variable? 
-Answer: There will be an infinite amount of ways for this to happen. 
-
-Question: Why is it important to consider how the function changes differently when allowing more than one variable to change in the process of taking the derivative of a function of more than one variable? 
-Answer: We want to consider how the function changes differently to understand the rate of change of the function as a whole, as this will provide us with the derivative. 
-
-Would you like to generate more flashcards to aid in your studies?
+Would you like me to generate more practice flashcard questions to help you study Gauss's law in electromagnetism?
