@@ -66,11 +66,18 @@ function openText(folderLocation) {
     {
         // extract data and append it to an array
 
+        while (!lines[j].includes("Question"))
+        {
+            j+=1;
+        }
+
         response.push({
             "Question": lines[j],
             "Answer": lines[j+1],
             "id": (j)/ 3
         });      
+
+
     }
     // print statement to check
     console.log(data);
