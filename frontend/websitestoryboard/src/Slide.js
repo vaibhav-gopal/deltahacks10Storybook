@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Slide.css'; // Import your CSS file for styling
 
-const Slide = ({ images }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+const Slide = () => {
+  const [image, setimage] = useState('/data/images/panel.png'); 
+  const [story, setStory] = useState('Something');
 
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-  };
+  async function getTranscript() {
+    const response = await fetch('/data/storyboard.txt');
+    const complete = await response.text();
+    console.log(complete);
+    setStory(complete);
+  }
 
-  const prevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide - 1 + images.length) % images.length);
-  };
+  useEffect(() => {
+    getTranscript()
+  }, [])
 
   return (
     <div className="slide-container">
-      <button onClick={prevSlide} className="slide-button">
-        Prev
-      </button>
       <div className="slide">
-        <img src={images[currentSlide]} alt={`Slide ${currentSlide + 1}`} />
+        <img src={image} />
         <div className='captions'>
-            <p1>captions</p1>
+            <p1>{story}</p1>
         </div>
       </div>
-      <button onClick={nextSlide} className="slide-button">
-        Next
-      </button>
     </div>
   );
 };

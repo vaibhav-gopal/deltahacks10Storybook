@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./gen.css"
 import Slide from './Slide.js';
 import FlipCard from './Flipcard.jsx';
@@ -20,10 +20,9 @@ function FlashcardsComponent({flashcardContent}) {
 }
 
 function StorybookComponent() {
-  const [images,setimages] = useState(['./logo192.png','./logo512.png']); 
   return (
       <div className='storybook'>
-        <Slide images={images} />
+        <Slide />
       </div>
   );
 }
