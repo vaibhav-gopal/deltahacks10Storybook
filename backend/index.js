@@ -40,26 +40,23 @@ function openText(folderLocation) {
         // read file data
     
         const data = fs.readFileSync(filePath, 'utf8');
-        const lines = data.split('\n').length;
-        for (let j = 0; j < lines; j++ )
+        const lines = data.split('\n');
+        let response = [];
+        for (let j = 0; j < lines.length; j+=2)
         {
-            if (j % 2 === 0)
-            {
-                // even, questions
-            }
+            // extract data and append it to an array
 
-            else
-            {
-                // odd, answers
-            }
-
-                    
+            response.push({
+                "Question": lines[j],
+                "Answer": lines[j+1],
+                "id": j
+            });      
         }
         // print statement to check
         console.log(data);
-    
-        // extract data and append it to an array
+        
+        // return as a .json
+        return JSON.stringify(response);
     }
-
 
 }
