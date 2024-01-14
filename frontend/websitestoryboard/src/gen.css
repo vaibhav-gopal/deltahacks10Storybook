@@ -1,8 +1,13 @@
 .card{
     height: auto;
-    background-color: #D9D9D9;
-    width: 45%;
+    width: 48%;
     justify-content: center;
+    
+}
+
+.card button {
+    margin: 10px;
+    flex: 1;
 }
 .flashcardcontainer{
     height: auto;
@@ -28,18 +33,26 @@
     height: auto;
     margin: 2%  2%;
     background-color: rgba(22, 50, 140, 0.53);
+    border-radius:20px;
 }
 
 .generateButton {
     background: linear-gradient(67.08deg, #6A4AFC -11.61%, #05BBAA 158.38%);
-    border-radius: 10px;
     color:#FFFFFF;
+    display: inline-flex;
+    padding: 5px 30px;
+    flex-direction: column;
+    align-items: flex-start;  
+    border-radius: 100px;
 }
 
 .flashcardButton {
     background: linear-gradient(180deg, #EB5951 0%, #D9453D 100%);
-    border-radius: 10px;
     color:#FFFFFF;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    border-radius: 100px;
 
 
 
@@ -47,13 +60,19 @@
 
 .storybookButton {
     background: linear-gradient(360deg, #05BBAA 0%, #35D6C7 100%), linear-gradient(0deg, #636363, #636363);
-    border-radius: 10px;
     color:#FFFFFF;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    border-radius: 100px;
 
 }
 
 .resourcesButton {
     background: linear-gradient(180deg, #553FFE 0%, #4533D4 100%);
-    border-radius: 10px;
     color:#FFFFFF;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    border-radius: 100px;
 }
